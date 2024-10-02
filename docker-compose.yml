@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  gemini-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - API_KEY=AIzaSyCnSXLkdrhQg3OcIUFah_Keu8jM_ckS4hU
+    volumes:
+      - .:/app
+    networks:
+      - gemini-network
+
+networks:
+  gemini-network:
+    driver: bridge
